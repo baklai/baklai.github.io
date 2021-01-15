@@ -5,18 +5,18 @@ export default {
   target: process.env.GH_PAGES ? "static" : "server",
 
   router: {
-    base: process.env.GH_PAGES ? `/${process.env.npm_package_name}/` : "/",
+    base: process.env.GH_PAGES ? `/${process.env.npm_package_name}/` : "/"
   },
 
   head: {
-    titleTemplate: `%s - ${process.env.npm_package_description}`,
+    titleTemplate: `%s • ${process.env.npm_package_description}`,
     title: process.env.npm_package_author_name,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
+      { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   loading: { color: "#fff" },
@@ -50,8 +50,8 @@ export default {
         path: "/icon.png",
         width: "50",
         height: "50",
-        type: "image/png",
-      },
+        type: "image/png"
+      }
     },
     manifest: {
       name: process.env.npm_package_name,
@@ -59,8 +59,8 @@ export default {
       description: process.env.npm_package_description,
       lang: "ru",
       display: "standalone",
-      background_color: "#000",
-    },
+      background_color: "#000"
+    }
   },
 
   vuetify: {
@@ -75,11 +75,11 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
+          success: colors.green.accent3
+        }
+      }
+    }
   },
 
-  build: {},
+  build: {}
 };
