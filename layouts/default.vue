@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -44,10 +44,8 @@
       </v-btn>
     </v-app-bar> -->
 
-    <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+    <v-main style="padding: 0px">
+      <nuxt />
     </v-main>
 
     <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>

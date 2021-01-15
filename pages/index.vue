@@ -1,60 +1,98 @@
 <template>
-  <v-row no-gutters>
-    <v-col cols="12">
-      <app-hero />
-      <app-features />
-      <app-features-bar />
-      <app-contact-us />
-      <app-affiliates />
-      <app-social />
-      <app-info-alt />
-      <app-contact-us2 />
-      <app-pro-features />
-      <app-info-alt2 />
-    </v-col>
-  </v-row>
-
-  <!-- <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row> -->
+  <div class="pt-0">
+    <navigation :color="color" :flat="flat" />
+    <v-main class="pt-0">
+      <home />
+      <about />
+      <download />
+      <pricing />
+      <contact />
+    </v-main>
+    <v-scale-transition>
+      <v-btn
+        fab
+        v-show="fab"
+        v-scroll="onScroll"
+        dark
+        fixed
+        bottom
+        right
+        color="secondary"
+        @click="toTop"
+      >
+        <v-icon>mdi-arrow-up</v-icon>
+      </v-btn>
+    </v-scale-transition>
+    <foote />
+  </div>
 </template>
 
 <script>
-import AppHero from "@/components/Hero";
-import AppFeatures from "@/components/Features";
-import AppFeaturesBar from "@/components/FeaturesBar";
-import AppContactUs from "@/components/ContactUs";
-import AppAffiliates from "@/components/Affiliates";
-import AppSocial from "@/components/Social";
-import AppInfoAlt from "@/components/InfoAlt";
-import AppContactUs2 from "@/components/ContactUs2";
-import AppProFeatures from "@/components/ProFeatures";
-import AppInfoAlt2 from "@/components/InfoAlt2";
+import navigation from "@/components/Navigation";
+import foote from "@/components/Footer";
+import home from "@/components/HomeSection";
+import about from "@/components/AboutSection";
+import download from "@/components/DownloadSection";
+import pricing from "@/components/PricingSection";
+import contact from "@/components/ContactSection";
 
 export default {
+  layout: "default",
   components: {
-    AppHero,
-    AppFeatures,
-    AppFeaturesBar,
-    AppContactUs,
-    AppAffiliates,
-    AppSocial,
-    AppInfoAlt,
-    AppContactUs2,
-    AppProFeatures,
-    AppInfoAlt2
+    navigation,
+    foote,
+    home,
+    about,
+    download,
+    pricing,
+    contact
+  },
+
+  data: () => ({
+    fab: null,
+    color: "",
+    flat: null
+  }),
+
+  created() {
+    //  const top = window.pageYOffset || 0;
+    const top = 150;
+    if (top <= 60) {
+      this.color = "transparent";
+      this.flat = true;
+    }
+  },
+
+  watch: {
+    fab(value) {
+      if (value) {
+        this.color = "secondary";
+        this.flat = false;
+      } else {
+        this.color = "transparent";
+        this.flat = true;
+      }
+    }
+  },
+
+  methods: {
+    onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      this.fab = top > 60;
+    },
+    toTop() {
+      this.$vuetify.goTo(0);
+    }
   }
 };
 </script>
+
+<style scoped>
+.v-main {
+  background-image: url("~assets/img/bgHero.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+</style>

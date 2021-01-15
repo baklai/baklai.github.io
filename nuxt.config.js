@@ -1,7 +1,7 @@
 import colors from "vuetify/es5/util/colors";
 
 export default {
-  ssr: process.env.GH_PAGES ? true : false,
+  ssr: process.env.GH_PAGES ? false : true,
   target: process.env.GH_PAGES ? "static" : "server",
 
   router: {
@@ -66,7 +66,7 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -76,6 +76,11 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
+        },
+        light: {
+          primary: "#119DA4",
+          secondary: "#171b34",
+          accent: "3D87E4"
         }
       }
     }
