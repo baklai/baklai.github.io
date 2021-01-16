@@ -5,16 +5,16 @@
       app
       temporary
       dark
-      src="@/assets/img/bgDrawer.jpg"
+      :src="require(`~/assets/img/bgDrawer.jpg`)"
     >
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-            <img src="@/assets/img/logo.png" alt="Logo" />
+            <img :src="require(`~/static/icon.png`)" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Calango</v-list-item-title>
-            <v-list-item-subtitle>WEB</v-list-item-subtitle>
+            <v-list-item-title class="title">Baklai Dmitrii</v-list-item-title>
+            <v-list-item-subtitle>Free developer</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -49,7 +49,7 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-        <v-img src="@/assets/img/logo.png" max-width="50px" />
+        <v-img :src="require(`~/static/icon.png`)" max-width="50px" />
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
@@ -78,17 +78,6 @@
   </div>
 </template>
 
-<style scoped>
-.v-toolbar {
-  transition: 0.6s;
-}
-
-.expand {
-  height: 80px !important;
-  padding-top: 10px;
-}
-</style>
-
 <script>
 export default {
   data: () => ({
@@ -99,17 +88,17 @@ export default {
       ["mdi-information-outline", "Sobre", "#features"],
       ["mdi-download-box-outline", "Download", "#download"],
       ["mdi-currency-usd", "Preços", "#pricing"],
-      ["mdi-email-outline", "Contatos", "#contact"],
-    ],
+      ["mdi-email-outline", "Contatos", "#contact"]
+    ]
   }),
   props: {
     color: String,
-    flat: Boolean,
+    flat: Boolean
   },
   methods: {
     onResize() {
       this.isXs = window.innerWidth < 850;
-    },
+    }
   },
 
   watch: {
@@ -119,11 +108,22 @@ export default {
           this.drawer = false;
         }
       }
-    },
+    }
   },
   mounted() {
     this.onResize();
     window.addEventListener("resize", this.onResize, { passive: true });
-  },
+  }
 };
 </script>
+
+<style scoped>
+.v-toolbar {
+  transition: 0.6s;
+}
+
+.expand {
+  height: 80px !important;
+  padding-top: 10px;
+}
+</style>

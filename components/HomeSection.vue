@@ -1,16 +1,18 @@
 <template>
   <section id="hero">
-    <v-parallax dark src="@/assets/img/bgHero.jpg" height="750">
+    <v-parallax dark :src="require(`~/assets/img/bgHero.jpg`)" height="750">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="8">
-              <h1 class="display-2 font-weight-bold mb-4">Vuetify.js</h1>
-              <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur <br />
-                adipisicing elit. Maiores porro voluptatibus <br />
-                delectus nam optio harum!
-              </h1>
+              <h1 class="display-2 font-weight-bold mb-4">Free developer</h1>
+              <h3 class="font-weight-light">
+                Наша команда занимаемся разработкой программного обеспечения для
+                клиентов со стран СНГ. <br />Мы специализируемся на разработке
+                программного обеспечения для студентов и частных заказчиков.<br />
+                Наше участие, подразумевает высокую степень индивидуальной
+                разработки с акцентом на производительность и безопасность.
+              </h3>
               <v-btn
                 rounded
                 outlined
@@ -70,7 +72,7 @@
         </v-col>
       </v-row>
       <div class="svg-border-waves text-white">
-        <v-img src="@/assets/img/borderWaves.svg" />
+        <v-img :src="require(`~/assets/img/borderWaves.svg`)" />
       </div>
     </v-parallax>
     <v-container fluid id="features" class="mt-2">
@@ -124,7 +126,7 @@
       </v-card>
     </v-dialog>
     <div class="svg-border-waves">
-      <img src="~@/assets/img/wave2.svg" />
+      <img :src="require(`~/assets/img/wave2.svg`)" />
     </div>
   </section>
 </template>
@@ -135,23 +137,44 @@ export default {
     return {
       dialog: false,
       videoId: "i8IvvHJssWE",
+      colorss: "#",
       features: [
         {
-          img: require("@/assets/img/icon2.png"),
-          title: "Design Limpo",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/icon-database.png"),
+          title: "Базы данных",
+          text:
+            "Создание баз данных: MySQL, MS Access, MongoDB. Разработка клиентских приложений под созданные нами базы данных."
         },
         {
-          img: require("@/assets/img/icon1.png"),
-          title: "Dados Seguros",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/icon-standalone-dev.png"),
+          title: "Standalone Development",
+          text:
+            "Написание программ на языках программирования: Delphi 7-Delphi XE, Lazarus, CodeTyphon, TurboPascal, PascalABC, PascalABC.NET, FreePascal, C#, Node.js, JavaScript, MathCad 2001-Mathcad 15"
         },
         {
-          img: require("@/assets/img/icon3.png"),
-          title: "Código Aberto",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/icon-web-dev.png"),
+          title: "Web Development",
+          text: "Написание скриптов на JavaScript и микросервисов на Node.js"
         },
-      ],
+        {
+          img: require("@/assets/img/icon-help.png"),
+          title: "Справочная документация",
+          text:
+            "Подготовка справочной информации под разработанные нами программные продукты."
+        },
+        {
+          img: require("@/assets/img/icon-standalone-dev.png"),
+          title: "Блок-схемы",
+          text:
+            "Создание блок-схем алгоритмов, при необходимости, для разработанных нами программ."
+        },
+        {
+          img: require("@/assets/img/icon-standalone-dev.png"),
+          title: "Блок-схемы",
+          text:
+            "Создание блок-схем алгоритмов, при необходимости, для разработанных нами программ."
+        }
+      ]
     };
   },
   watch: {
@@ -159,7 +182,7 @@ export default {
       if (!value) {
         this.pause();
       }
-    },
+    }
   },
   methods: {
     ready(event) {
@@ -180,8 +203,8 @@ export default {
     },
     pause() {
       this.player.pauseVideo();
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -190,17 +213,17 @@ export default {
   stroke: white;
   stroke-dasharray: 650;
   stroke-dashoffset: 650;
-  -webkit-transition: all 0.5s ease-in-out;
+  --transition: all 0.5s ease-in-out;
   opacity: 0.3;
 }
 
 .playBut {
   /*  border: 1px solid red;*/
   display: inline-block;
-  -webkit-transition: all 0.5s ease;
+  --transition: all 0.5s ease;
 
   .triangle {
-    -webkit-transition: all 0.7s ease-in-out;
+    --transition: all 0.7s ease-in-out;
     stroke-dasharray: 240;
     stroke-dashoffset: 480;
     stroke: white;

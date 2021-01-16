@@ -1,57 +1,86 @@
 <template>
-  <section class="pb-8" id="contact">
+  <section class="pb-8 pt-8" id="contact">
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row justify="center">
-            <v-col cols="12" sm="5">
+            <v-col cols="12" sm="6">
               <h1 class="font-weight-light display-1">Contate-nos</h1>
               <h3 class="font-weight-light mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
                 explicabo commodi quisquam asperiores dolore ad enim provident
                 veniam perferendis voluptate, perspiciatis.
               </h3>
-              <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h3>
-              <h3 class="font-weight-light mt-3">
-                Telefone: +xx (xx) xxxxx-xxxx
-              </h3>
-              <h3 class="font-weight-light">
-                Email: email@email.com
-              </h3>
+
+              <div class="pt-2 mb-0 d-flex">
+                <v-avatar size="72">
+                  <v-icon x-large>
+                    mdi-map-marker-outline
+                  </v-icon>
+                </v-avatar>
+                <h3 class="font-weight-light mt-3">
+                  8553 N. Beach St. Ste. 227<br />Fort Worth, Texas 76137
+                </h3>
+              </div>
+
+              <v-divider inset class="my-2" />
+
+              <div class="pt-2 mb-0 d-flex">
+                <v-avatar size="72">
+                  <v-icon x-large>
+                    mdi-cellphone
+                  </v-icon>
+                </v-avatar>
+                <h3 class="font-weight-light mt-3">
+                  01 (800) 433 744<br />01 (800) 433 633
+                </h3>
+              </div>
+
+              <v-divider inset class="my-2" />
+
+              <div class="pt-2 mb-0 d-flex">
+                <v-avatar size="72">
+                  <v-icon x-large>
+                    mdi-email
+                  </v-icon>
+                </v-avatar>
+                <h3 class="font-weight-light mt-3">
+                  john@vuetifyjs.com<br />heather@vuetifyjs.com
+                </h3>
+              </div>
             </v-col>
-            <v-col cols="12" sm="7">
+
+            <v-col cols="12" sm="6">
               <v-form ref="form" v-model="valid" :lazy-validation="lazy">
                 <v-text-field
-                    v-model="name"
-                    :rules="nameRules"
-                    label="Nome"
-                    required
+                  v-model="name"
+                  :rules="nameRules"
+                  label="Nome"
+                  required
                 ></v-text-field>
 
                 <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    required
+                  v-model="email"
+                  :rules="emailRules"
+                  label="E-mail"
+                  required
                 ></v-text-field>
 
                 <v-textarea
-                    v-model="textArea"
-                    :rules="textAreaRules"
-                    label="Mensagem"
-                    required
+                  v-model="textArea"
+                  :rules="textAreaRules"
+                  label="Mensagem"
+                  required
                 />
 
                 <v-btn
-                    :disabled="!valid"
-                    color="primary"
-                    :dark="valid"
-                    rounded
-                    block
-                    class="mt-3"
-                    @click="submit"
+                  :disabled="!valid"
+                  color="primary"
+                  :dark="valid"
+                  rounded
+                  block
+                  class="mt-3"
+                  @click="submit"
                 >
                   Enviar
                 </v-btn>
@@ -61,28 +90,10 @@
         </v-col>
       </v-row>
     </v-container>
-    <div class="svg-border-waves text-white">
-      <v-img src="~@/assets/img/borderWavesBlue.svg"/>
-    </div>
-    <v-snackbar
-        v-model="snackbar.enabled"
-        timeout="3000"
-        right
-        top
-        :color="snackbar.color"
-    >
-      {{ snackbar.text }}
 
-      <template v-slot:action="{ attrs }">
-        <v-btn
-            text
-            v-bind="attrs"
-            @click="snackbar.enabled = false"
-        >
-          Fechar
-        </v-btn>
-      </template>
-    </v-snackbar>
+    <div class="svg-border-waves text-white">
+      <v-img :src="require(`@/assets/img/borderWavesBlue.svg`)" />
+    </div>
   </section>
 </template>
 
@@ -99,7 +110,6 @@
   width: 100%;
   overflow: hidden;
 }
-
 </style>
 
 <script>
@@ -111,24 +121,24 @@ export default {
     valid: true,
     name: "",
     nameRules: [
-      (v) => !!v || "O campo nome é obrigatório",
-      (v) => (v && v.length >= 6) || "O nome precisa ter mais de 6 caracteres",
+      v => !!v || "O campo nome é obrigatório",
+      v => (v && v.length >= 6) || "O nome precisa ter mais de 6 caracteres"
     ],
     email: "",
     emailRules: [
-      (v) => !!v || "O campo email é obrigatório",
-      (v) => /.+@.+\..+/.test(v) || "O E-mail precisa ser válido",
+      v => !!v || "O campo email é obrigatório",
+      v => /.+@.+\..+/.test(v) || "O E-mail precisa ser válido"
     ],
     textArea: "",
     textAreaRules: [
-      (v) => !!v || "O campo de texto é obrigatório",
-      (v) => (v && v.length >= 10) || "Mínimo de 10 caracteres",
+      v => !!v || "O campo de texto é obrigatório",
+      v => (v && v.length >= 10) || "Mínimo de 10 caracteres"
     ],
     lazy: false,
     snackbar: {
       enabled: false,
-      text: '',
-      color: ''
+      text: "",
+      color: ""
     }
   }),
   methods: {
