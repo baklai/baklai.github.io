@@ -12,6 +12,7 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@nuxtjs/meta": "^3.0.0-beta.16",
     "@nuxtjs/pwa": "^3.3.0",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12"
