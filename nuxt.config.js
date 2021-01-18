@@ -45,7 +45,7 @@ export default {
       theme_color: "#000",
       lang: "ru",
       ogType: "website",
-      ogHost: process.env.BASE_URL,
+      ogHost: "baklai.github.io",
       ogImage: {
         path: "/icon.png",
         width: "50",
