@@ -5,12 +5,8 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="6">
-              <h1 class="font-weight-light display-1">Contate-nos</h1>
-              <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                explicabo commodi quisquam asperiores dolore ad enim provident
-                veniam perferendis voluptate, perspiciatis.
-              </h3>
+              <h1 class="font-weight-light display-1">Контакты</h1>
+              <h3 class="font-weight-light mt-3"></h3>
 
               <div class="pt-2 mb-0 d-flex">
                 <v-avatar size="72">
@@ -19,7 +15,7 @@
                   </v-icon>
                 </v-avatar>
                 <h3 class="font-weight-light mt-3">
-                  8553 N. Beach St. Ste. 227<br />Fort Worth, Texas 76137
+                  Liman, Donets'Ka Oblast', Ukraine
                 </h3>
               </div>
 
@@ -28,11 +24,13 @@
               <div class="pt-2 mb-0 d-flex">
                 <v-avatar size="72">
                   <v-icon x-large>
-                    mdi-cellphone
+                    mdi-telegram
                   </v-icon>
                 </v-avatar>
                 <h3 class="font-weight-light mt-3">
-                  01 (800) 433 744<br />01 (800) 433 633
+                  <a href="https://t.me/baklai" target="_blank"
+                    >Dmitrii Baklai</a
+                  >
                 </h3>
               </div>
 
@@ -40,22 +38,27 @@
 
               <div class="pt-2 mb-0 d-flex">
                 <v-avatar size="72">
-                  <v-icon x-large>
+                  <v-icon large>
                     mdi-email
                   </v-icon>
                 </v-avatar>
                 <h3 class="font-weight-light mt-3">
-                  john@vuetifyjs.com<br />heather@vuetifyjs.com
+                  d.n.baklai@gmail.com
                 </h3>
               </div>
             </v-col>
 
             <v-col cols="12" sm="6">
-              <v-form ref="form" v-model="valid" :lazy-validation="lazy">
+              <v-form
+                ref="form"
+                v-model="valid"
+                :lazy-validation="lazy"
+                disabled
+              >
                 <v-text-field
                   v-model="name"
                   :rules="nameRules"
-                  label="Nome"
+                  label="Имя"
                   required
                 ></v-text-field>
 
@@ -69,7 +72,7 @@
                 <v-textarea
                   v-model="textArea"
                   :rules="textAreaRules"
-                  label="Mensagem"
+                  label="Сообщение"
                   required
                 />
 
@@ -82,7 +85,7 @@
                   class="mt-3"
                   @click="submit"
                 >
-                  Enviar
+                  Отправить
                 </v-btn>
               </v-form>
             </v-col>
@@ -113,27 +116,16 @@
 </style>
 
 <script>
-// import {db} from '@/main'
-
 export default {
   data: () => ({
     icons: ["fa-facebook", "fa-twitter", "fa-linkedin", "fa-instagram"],
     valid: true,
     name: "",
-    nameRules: [
-      v => !!v || "O campo nome é obrigatório",
-      v => (v && v.length >= 6) || "O nome precisa ter mais de 6 caracteres"
-    ],
+    nameRules: [v => !!v || "", v => (v && v.length >= 6) || ""],
     email: "",
-    emailRules: [
-      v => !!v || "O campo email é obrigatório",
-      v => /.+@.+\..+/.test(v) || "O E-mail precisa ser válido"
-    ],
+    emailRules: [v => !!v || "", v => /.+@.+\..+/.test(v) || ""],
     textArea: "",
-    textAreaRules: [
-      v => !!v || "O campo de texto é obrigatório",
-      v => (v && v.length >= 10) || "Mínimo de 10 caracteres"
-    ],
+    textAreaRules: [v => !!v || "", v => (v && v.length >= 10) || ""],
     lazy: false,
     snackbar: {
       enabled: false,
@@ -142,21 +134,7 @@ export default {
     }
   }),
   methods: {
-    submit() {
-      /*db.collection("contactData").add({
-        name: this.name,
-        email: this.email,
-        message: this.textArea
-      }).then(() => {
-        this.snackbar.text = "Mensagem enviada com sucesso"
-        this.snackbar.color = "success"
-        this.snackbar.enabled = true
-      }).catch(() => {
-        this.snackbar.text = "Erro ao enviar mensagem"
-        this.snackbar.color = "danger"
-        this.snackbar.enabled = true
-      })*/
-    }
+    submit() {}
   }
 };
 </script>

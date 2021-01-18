@@ -5,52 +5,66 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="7">
-              <h1 class="font-weight-light display-2">Sobre</h1>
-              <h1 class="font-weight-light display-1 mb-3">
-                Lorem ipsum dolor!
-              </h1>
+              <h1 class="font-weight-light display-1">Оказываемые услуги</h1>
+              <h3 class="font-weight-light mb-3">
+                Услуги и условия сотрудничества
+              </h3>
               <v-row>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon1.svg`)"
+                    :src="require(`~/assets/img/icon-user-about.png`)"
                     max-width="60px"
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Занимаюсь написанием программ, подготовкой курсовых,
+                    лабораторных, отчетов; Построение блок-схем алгоритмов;
+                    On-line помощь.
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon2.svg`)"
+                    :src="require(`~/assets/img/icon-user-intelligence.png`)"
                     max-width="60px"
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Работаю с целым рядом ЯП и IDE: Delphi 7 - Delphi XE,
+                    Lazarus, CodeTyphon, TurboPascal, PascalABC, PascalABC.NET,
+                    FreePascal, C#, Node.js, JavaScript, MathCad 2001 - Mathcad
+                    15, Mathcad Prime.
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon3.svg`)"
+                    :src="require(`~/assets/img/icon-user-wallet.png`)"
                     max-width="60px"
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Работаю с предоплатой (перед оплатой предоставляем доступ к
+                    исполнительному файлу или нарезке скриншотов — как
+                    доказательство, что работа выполнена и код работает
+                    корректно); Рассматриваю задания без оплаты (не очень
+                    объемные по времени).
+                  </p>
+                </v-col>
+                <v-col cols="12" class="d-flex align-center">
+                  <v-img
+                    :src="require(`~/assets/img/icon-user-last-24-hours.png`)"
+                    max-width="60px"
+                    class="mr-4"
+                  />
+                  <p class="text-justify">
+                    Я постоянно в режиме ожидания, чтобы помочь, ответить на
+                    ваши вопросы и помочь решить ваши проблемы.
                   </p>
                 </v-col>
               </v-row>
             </v-col>
             <v-col cols="12" md="5" class="d-none d-md-flex">
               <v-img
-                :src="require(`~/assets/img/ill1.svg`)"
+                :src="require(`~/assets/img/about-img.svg`)"
                 class="d-block ml-auto mr-auto"
                 max-width="400px"
               />

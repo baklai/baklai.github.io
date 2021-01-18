@@ -13,7 +13,7 @@
             <img :src="require(`~/static/icon.png`)" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Baklai Dmitrii</v-list-item-title>
+            <v-list-item-title class="title">{{ author }}</v-list-item-title>
             <v-list-item-subtitle>Free developer</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -45,13 +45,14 @@
       :color="color"
       :flat="flat"
       dark
-      class="px-15"
-      :class="{ expand: flat }"
+      :class="{ expand: flat, 'px-0': isXs, 'px-15': !isXs }"
     >
       <v-toolbar-title>
-        <v-img :src="require(`~/static/icon.png`)" max-width="50px" />
+        <v-img :src="require(`~/static/icon.png`)" max-width="42px" />
       </v-toolbar-title>
+
       <v-spacer />
+
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         class="mr-4"
@@ -62,16 +63,13 @@
           <span class="mr-2">Home</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#features')">
-          <span class="mr-2">Sobre</span>
+          <span class="mr-2">Features</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#download')">
-          <span class="mr-2">Download</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#pricing')">
-          <span class="mr-2">Preços</span>
+        <v-btn text @click="$vuetify.goTo('#repository')">
+          <span class="mr-2">Repository</span>
         </v-btn>
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
-          <span class="mr-2">Contate-nos</span>
+          <span class="mr-2">Contacts</span>
         </v-btn>
       </div>
     </v-app-bar>
@@ -80,27 +78,34 @@
 
 <script>
 export default {
+  props: {
+    color: String,
+    flat: Boolean
+  },
   data: () => ({
     drawer: null,
     isXs: false,
     items: [
       ["mdi-home-outline", "Home", "#hero"],
-      ["mdi-information-outline", "Sobre", "#features"],
-      ["mdi-download-box-outline", "Download", "#download"],
-      ["mdi-currency-usd", "Preços", "#pricing"],
-      ["mdi-email-outline", "Contatos", "#contact"]
+      ["mdi-information-outline", "Features", "#features"],
+      ["mdi-download-box-outline", "Repository", "#repository"],
+      ["mdi-email-outline", "Contacts", "#contact"]
     ]
   }),
-  props: {
-    color: String,
-    flat: Boolean
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize, { passive: true });
+  },
+  computed: {
+    author() {
+      return this.$store.state.author;
+    }
   },
   methods: {
     onResize() {
       this.isXs = window.innerWidth < 850;
     }
   },
-
   watch: {
     isXs(value) {
       if (!value) {
@@ -109,10 +114,6 @@ export default {
         }
       }
     }
-  },
-  mounted() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize, { passive: true });
   }
 };
 </script>

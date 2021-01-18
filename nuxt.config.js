@@ -5,7 +5,7 @@ export default {
   target: process.env.GH_PAGES ? "static" : "server",
 
   router: {
-    base: process.env.GH_PAGES ? `/${process.env.npm_package_name}/` : "/"
+    base: process.env.GH_PAGES ? "/" : "/"
   },
 
   head: {
