@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-parallax dark :src="require(`~/assets/img/bgHero.jpg`)" height="750">
+    <v-parallax dark src="/img/bgHero.jpg" height="750">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
@@ -16,8 +16,8 @@
                 </h1>
               </h1>
               <h3 class="font-weight-light">
-                ПРОГРАММИРОВАНИЕ НА ЗАКАЗ! Delphi, Lazarus, Pascal, C#, Node.js,
-                JavaScript, MathCad, Блок-схемы алгоритмов, On-line помощь...
+                Delphi, Lazarus, Pascal, C#, Node.js, JavaScript, MathCad,
+                Блок-схемы алгоритмов, On-line помощь...
               </h3>
               <v-btn rounded outlined large dark to="/" huxt class="mt-5">
                 GO TO HOME
@@ -29,18 +29,18 @@
         </v-col>
       </v-row>
       <div class="svg-border-waves text-white">
-        <v-img :src="require(`~/assets/img/borderWaves.svg`)" />
+        <v-img src="/svg/borderWaves.svg" />
       </div>
     </v-parallax>
     <div class="svg-border-waves">
-      <img :src="require(`~/assets/img/wave-hero.svg`)" />
+      <img src="/svg/wave-hero.svg" />
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  layout: "default",
+  layout: 'default',
   props: {
     error: {
       type: Object,
@@ -49,8 +49,8 @@ export default {
   },
   data() {
     return {
-      pageNotFound: "404 Not Found",
-      otherError: "An error occurred"
+      pageNotFound: "Oops! That page can't be found",
+      otherError: 'Oops! Internal server error'
     };
   },
   head() {

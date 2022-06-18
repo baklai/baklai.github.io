@@ -1,5 +1,5 @@
 <template>
-  <section id="about">
+  <section id="about" class="py-15">
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="10">
@@ -12,7 +12,7 @@
               <v-row>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon-user-about.png`)"
+                    src="/img/icon-user-about.png"
                     max-width="60px"
                     class="mr-4"
                   />
@@ -24,7 +24,7 @@
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon-user-intelligence.png`)"
+                    src="/img/icon-user-intelligence.png"
                     max-width="60px"
                     class="mr-4"
                   />
@@ -37,7 +37,7 @@
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon-user-wallet.png`)"
+                    src="/img/icon-user-wallet.png"
                     max-width="60px"
                     class="mr-4"
                   />
@@ -51,7 +51,7 @@
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
                   <v-img
-                    :src="require(`~/assets/img/icon-user-last-24-hours.png`)"
+                    src="/img/icon-user-last-24-hours.png"
                     max-width="60px"
                     class="mr-4"
                   />
@@ -64,9 +64,9 @@
             </v-col>
             <v-col cols="12" md="5" class="d-none d-md-flex">
               <v-img
-                :src="require(`~/assets/img/about-img.svg`)"
+                src="/svg/about-img.svg"
                 class="d-block ml-auto mr-auto"
-                max-width="400px"
+                max-width="500px"
               />
             </v-col>
           </v-row>
