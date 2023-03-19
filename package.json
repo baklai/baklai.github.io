@@ -1,26 +1,51 @@
 {
   "name": "baklai.github.io",
   "version": "1.0.0",
-  "description": "Free developer",
+  "description": "About Dmitrii Baklai",
   "author": "Dmitrii Baklai",
   "private": true,
+  "homepage": "https://github.com/baklai/baklai.github.io#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baklai/baklai.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baklai/baklai.github.io/issues"
+  },
+  "keywords": [
+    "node.js",
+    "vue.js"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14 <=16.15.0",
+    "npm": ">=8.5.5"
+  },
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "set GH_PAGES=true && nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^7.2.2",
-    "@nuxtjs/meta": "^3.0.0-beta.16",
-    "@nuxtjs/pwa": "^3.3.0",
-    "core-js": "^3.8.2",
-    "nuxt": "^2.14.12"
+    "autoprefixer": "^10.4.14",
+    "pinia": "^2.0.28",
+    "postcss": "^8.4.21",
+    "vue": "^3.2.45",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "prettier": "^2.7.1",
     "push-dir": "^0.4.1",
-    "sass-loader": "^10.1.1"
+    "sass": "^1.58.1",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.0.0"
   }
 }
