@@ -1,6 +1,5 @@
-# baklai.github.io
 
-Free developer
+[baklai.github.io](https://baklai.github.io)
 
 ## Build Setup
 
