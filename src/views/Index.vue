@@ -40,7 +40,7 @@ const store = useAppStore();
         <p class="pt-8 text-sm">
           {{
             $t(
-              'JavaScript developer with a passion for learning. I want to be part of a team of professional to grow further and build high quality, scalable web application. In the future, I want to grow to a senior Full Stack JavaScript Developer.'
+              'Creative and goal-oriented Full Stack JavaScript Developer with extensive knowledge and experience in developing both client-side and server-side web applications. Proficient in JavaScript, including modern frameworks and libraries such as Vue, Nest, Node.js, and Express. My experience spans the entire software development lifecycle, from design to deployment and maintenance of final solutions.'
             )
           }}
         </p>
